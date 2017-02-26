@@ -16,8 +16,6 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        LinearLayout ll_splash = (LinearLayout) findViewById(R.id.ll_splash);
-        ll_splash.setBackground(getDrawable(R.drawable.splash_img));
         mHandler.sendEmptyMessageDelayed(0, 3000);
     }
 
