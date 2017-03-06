@@ -14,6 +14,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import debbili.studio.debbilinote.data.DatabaseHelper;
+import debbili.studio.debbilinote.data.NoteData;
 import debbili.studio.debbilinote.note.CreateNoteActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -30,7 +35,14 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, CreateNoteActivity.class));
+                //startActivity(new Intent(MainActivity.this, CreateNoteActivity.class));
+                DatabaseHelper dbHelper = new DatabaseHelper(MainActivity.this);
+                NoteData note = new NoteData();
+                note.setTitle("Test");
+                note.setContent("testtext");
+                note.setShare(false);
+                note.setAlarm(false);
+                dbHelper.createNewNote(note);
             }
         });
 
