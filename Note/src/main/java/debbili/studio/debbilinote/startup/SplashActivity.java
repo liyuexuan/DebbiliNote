@@ -1,11 +1,10 @@
 package debbili.studio.debbilinote.startup;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.LinearLayout;
 
 import debbili.studio.debbilinote.MainActivity;
 import debbili.studio.debbilinote.R;

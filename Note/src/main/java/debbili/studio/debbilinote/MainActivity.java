@@ -3,8 +3,6 @@ package debbili.studio.debbilinote;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,12 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import android.view.View;
 
 import debbili.studio.debbilinote.data.DatabaseHelper;
 import debbili.studio.debbilinote.data.NoteData;
+import debbili.studio.debbilinote.note.AllNotesActivity;
 import debbili.studio.debbilinote.note.CreateNoteActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -36,13 +33,26 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 //startActivity(new Intent(MainActivity.this, CreateNoteActivity.class));
+                /*int i = 0;
                 DatabaseHelper dbHelper = new DatabaseHelper(MainActivity.this);
                 NoteData note = new NoteData();
-                note.setTitle("Test");
+                note.setTitle("Test"+i++);
                 note.setContent("testtext");
                 note.setShare(false);
                 note.setAlarm(false);
-                dbHelper.createNewNote(note);
+                dbHelper.createNewNote(note);*/
+                startActivity(new Intent(MainActivity.this, CreateNoteActivity.class));
+            }
+        });
+
+        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab_2);
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //startActivity(new Intent(MainActivity.this, CreateNoteActivity.class));
+                //DatabaseHelper dbHelper = new DatabaseHelper(MainActivity.this);
+                //dbHelper.queryAllNote();
+                startActivity(new Intent(MainActivity.this, AllNotesActivity.class));
             }
         });
 
